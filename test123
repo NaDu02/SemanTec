@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mein Spiel</title>
+</head>
+<body>
+    <h1>Willkommen zu meinem Spiel!</h1>
+    <p>Drücke den Startknopf, um das Spiel zu beginnen.</p>
+    <button onclick="startGame()">Start</button>
+
+    <script>
+        function startGame() {
+            // Hier kannst du den Code für dein Spiel einfügen
+        }
+    </script>
+</body>
+</html>
