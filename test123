@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mein Spiel</title>
+    <title>Jump and Run</title>
+    <style>
+        #player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
-    <h1>Willkommen zu meinem Spiel!</h1>
-    <p>Drücke den Startknopf, um das Spiel zu beginnen.</p>
-    <button onclick="startGame()">Start</button>
+    <div id="player"></div>
 
     <script>
-        // Variablen für das Spiel
-        let score = 0;
-        let time = 60;
-        let gameInterval;
+        var player = document.getElementById("player");
 
-        // Funktion, um das Spiel zu starten
-        function startGame() {
-            // Starte das Spiel nur, wenn es nicht bereits läuft
-            if (!gameInterval) {
-                gameInterval = setInterval(updateGame, 1000); // Starte das Spiel-Update-Intervall
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowUp") {
+                player.style.top = (parseInt(player.style.top) - 10) + "px";
+            } else if (event.key === "ArrowRight") {
+                player.style.left = (parseInt(player.style.left) + 10) + "px";
+            } else if (event.key === "ArrowDown") {
+                player.style.top = (parseInt(player.style.top) + 10) + "px";
+            } else if (event.key === "ArrowLeft") {
+                player.style.left = (parseInt(player.style.left) - 10) + "px";
             }
-        }
-
-        // Funktion, um das Spiel zu aktualisieren
-        function updateGame() {
-            updateTime();
-            // Fügen Sie hier Ihre Spiellogik hinzu
-            console.log("Spiel aktualisiert! Verbleibende Zeit: " + time + ", Punktzahl: " + score);
-        }
-
-        // Funktion, um den Score zu erhöhen
-        function increaseScore() {
-            score++;
-        }
-
-        // Funktion, um die verbleibende Zeit zu aktualisieren
-        function updateTime() {
-            time--;
-            if (time <= 0) {
-                endGame();
-            }
-        }
-
-        // Funktion, um das Spiel zu beenden
-        function endGame() {
-            clearInterval(gameInterval); // Stoppt das Spiel-Update-Intervall
-            gameInterval = null; // Setzt das Spiel-Intervall zurück
-            console.log("Spiel beendet! Endpunktzahl: " + score);
-        }
+        });
     </script>
 </body>
 </html>
+
