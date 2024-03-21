@@ -1,7 +1,11 @@
-# SemanTec
-:0
-<<<<<<< HEAD
-hallo s
-=======
-Test20240321
->>>>>>> 34db5ed0ed4e08a3ae5300d98441f6e14bc0af05
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Julians Website</title>
+</head>
+<body>
+    <h1>Willkommen, Julian!</h1>
+    <p>Wir freuen uns, dass du hier bist.</p>
+</body>
+</html>
