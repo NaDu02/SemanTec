@@ -9,15 +9,24 @@
     <button onclick="startGame()">Start</button>
 
     <script>
-        function startGame() {
-
         // Variablen für das Spiel
         let score = 0;
         let time = 60;
+        let gameInterval;
 
         // Funktion, um das Spiel zu starten
         function startGame() {
-            // Spiellogik hier
+            // Starte das Spiel nur, wenn es nicht bereits läuft
+            if (!gameInterval) {
+                gameInterval = setInterval(updateGame, 1000); // Starte das Spiel-Update-Intervall
+            }
+        }
+
+        // Funktion, um das Spiel zu aktualisieren
+        function updateGame() {
+            updateTime();
+            // Fügen Sie hier Ihre Spiellogik hinzu
+            console.log("Spiel aktualisiert! Verbleibende Zeit: " + time + ", Punktzahl: " + score);
         }
 
         // Funktion, um den Score zu erhöhen
@@ -28,8 +37,16 @@
         // Funktion, um die verbleibende Zeit zu aktualisieren
         function updateTime() {
             time--;
+            if (time <= 0) {
+                endGame();
+            }
         }
 
+        // Funktion, um das Spiel zu beenden
+        function endGame() {
+            clearInterval(gameInterval); // Stoppt das Spiel-Update-Intervall
+            gameInterval = null; // Setzt das Spiel-Intervall zurück
+            console.log("Spiel beendet! Endpunktzahl: " + score);
         }
     </script>
 </body>
