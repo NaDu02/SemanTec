@@ -10,7 +10,26 @@
 
     <script>
         function startGame() {
-            // Hier kannst du den Code für dein Spiel einfügen
+
+        // Variablen für das Spiel
+        let score = 0;
+        let time = 60;
+
+        // Funktion, um das Spiel zu starten
+        function startGame() {
+            // Spiellogik hier
+        }
+
+        // Funktion, um den Score zu erhöhen
+        function increaseScore() {
+            score++;
+        }
+
+        // Funktion, um die verbleibende Zeit zu aktualisieren
+        function updateTime() {
+            time--;
+        }
+
         }
     </script>
 </body>
