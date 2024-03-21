@@ -5,8 +5,8 @@
     <style>
         #player {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 100px; /* Neue Position oben */
+            left: 100px; /* Neue Position links */
             width: 50px;
             height: 50px;
             background-color: red;
@@ -33,4 +33,3 @@
     </script>
 </body>
 </html>
-
